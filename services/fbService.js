@@ -93,7 +93,7 @@ module.exports = {
       data.from = profile.from;
       data.residence = profile.residence;
       data.friendValue = profile.friendValue? profile.friendValue: null;
-      data.realAccount = profile.realAccount? profile.realAccount: null; 
+      data.realAccount = profile.realAccount
       data.save((err, doc) =>{
         if(err) console.log(err)
         if(doc) console.log('replace a profile!!')
@@ -109,7 +109,7 @@ module.exports = {
         from: profile.from,
         residence: profile.residence,
         friendValue: profile.friendValue? profile.friendValue: null,
-        realAccount: profile.realAccount? profile.realAccount: null 
+        realAccount: profile.realAccount
       },(err, doc) =>{
         if(err) console.log(err)
         if(doc) console.log('write a profile!!')

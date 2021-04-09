@@ -12,12 +12,12 @@ class Profile {
     }
     checkRealAccount(){
       let value = 0
-      if(this.backgroundImageUrl == null) value++
-      if(this.profileImageUrl == null) value++
-      if(this.from == null) value++
-      if(this.residence == null) value++
-      if(this.friendValue == null) value++
- 
+      if(!this.backgroundImageUrl) value++
+      if(!this.profileImageUrl) value++
+      if(!this.from) value++
+      if(!this.residence) value++
+      if(!this.friendValue) value++
+
       if(value > 2) this.realAccount = false
       else this.realAccount = true
     }
