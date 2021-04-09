@@ -17,7 +17,7 @@ class Profile {
       if(this.from == null) value++
       if(this.residence == null) value++
       if(this.friendValue == null) value++
-
+ 
       if(value > 2) this.realAccount = false
       else this.realAccount = true
     }

@@ -53,6 +53,7 @@ module.exports = async (page) =>{
         })
       }
     })
+    profile.checkRealAccount();
     await writeProfileToDb(profile);
     
   }
