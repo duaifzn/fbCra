@@ -84,6 +84,7 @@ module.exports = {
   },
   writeProfileToDb: async(profile) =>{
     let data = await Profile.findOne({realUrl: profile.realUrl})
+    profile.checkRealAccount();
     if(data){
       data.uuid = profile.uuid;
       data.realUrl = profile.realUrl;

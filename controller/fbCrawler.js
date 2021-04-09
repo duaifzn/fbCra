@@ -129,7 +129,11 @@ module.exports = async (page, url) => {
       let comment = new Comment();
       const $3 = cheerio.load($2(elem).html());
       $3(commentNameTag).each(async (i, elem) => {
-        let url = $3(commentNameTag).children('a').attr('href').split('&')[0];
+        let originUrl = $3(commentNameTag).children('a').attr('href')
+        let url = '';
+        if(originUrl.includes('php?id=')) url = originUrl.split('&')[0]
+        else if(originUrl.includes('?comment_id=')) url = originUrl.split('?')[0]
+
         //判斷資料庫是否有個人資料
         let profile = await urlFindProfile(url);
         if(profile){
